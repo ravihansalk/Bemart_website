@@ -1,1 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bemart | Business Development & Digital Solutions</title>
 
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #0D6EFD;
+      --primary-dark: #0B5ED7;
+      --bg-light: #F5F9FF;
+      --text-dark: #1f2937;
+      --text-muted: #6b7280;
+      --border: rgba(15,23,42,0.12);
+      --radius: 16px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", sans-serif;
+    }
+
+    body {
+      color: var(--text-dark);
+      background: #fff;
+      line-height: 1.65;
+    }
+
+    /* ===== Header ===== */
+    header {
+      background: var(--primary);
+      color: #fff;
+      padding: 18px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header h1 {
+      font-size: 24px;
+      font-weight: 800;
+    }
+
+    header nav a {
+      color: #fff;
+      margin-left: 22px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* ===== Hero ===== */
+    .hero {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #fff;
+      padding: 120px 20px;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 46px;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      max-width: 780px;
+      margin: auto;
+      font-size: 18px;
+      opacity: 0.95;
+    }
+
+    section {
+      padding: 90px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    section h3 {
+      font-size: 34px;
+      text-align: center;
+      margin-bottom: 16px;
+      font-weight: 800;
+    }
+
+    section p.section-desc {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 60px;
+      color: var(--text-muted);
+      font-size: 17px;
+    }
+
+    /* ===== Grid Cards ===== */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+    }
+
+    .card {
+      background: var(--bg-light);
+      padding: 32px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(13,110,253,0.12);
+    }
+
+    .card h4 {
+      margin-bottom: 12px;
+      color: var(--primary);
+      font-size: 20px;
+      font-weight: 800;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 15px;
+    }
+
+    /* ===== Product Apps ===== */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 36px;
+    }
+
+    .product-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 34px 30px;
+      box-shadow: 0 12px 30px rgba(2,6,23,0.08);
+    }
+
+    .product-tag {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 6px 12px;
+      background: var(--bg-light);
+      color: var(--primary);
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .product-card h4 {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .product-card p {
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    .product-card ul {
+      padding-left: 18px;
+      margin-bottom: 18px;
+    }
+
+    .product-card li {
+      margin-bottom: 10px;
+      color: var(--text-muted);
+    }
+
+    /* Screenshots */
+    .screenshots {
+      display: flex;
+      gap: 14px;
+      margin: 20px 0;
+      overflow-x: auto;
+    }
+
+    .screenshots img {
+      width: 140px;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #f1f5f9;
+    }
+
+    /* Store badges */
+    .store-badges {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    .store-badges img {
+      height: 44px;
+      cursor: pointer;
+    }
+
+    /* Buttons */
+    .btn {
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      font-size: 14px;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+    }
+
+    /* ===== CTA ===== */
+    .cta {
+      background: var(--primary);
+      color: #fff;
+      text-align: center;
+      padding: 90px 20px;
+    }
+
+    .cta h3 {
+      font-size: 36px;
+      margin-bottom: 18px;
+      font-weight: 900;
+    }
+
+    .cta p {
+      font-size: 18px;
+      margin-bottom: 28px;
+    }
+
+    footer {
+      background: #0b1c3f;
+      color: #cbd5e1;
+      text-align: center;
+      padding: 36px 20px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      header nav { display: none; }
+      .hero h2 { font-size: 34px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Bemart</h1>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#product">Product</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- Hero -->
+<div class="hero">
+  <h2>Business Development & Digital Solutions</h2>
+  <p>
+    Bemart is a business development and consulting company delivering
+    practical digital solutions that help businesses grow and connect
+    with customers efficiently.
+  </p>
+</div>
+
+<!-- About -->
+<section id="about">
+  <h3>About Bemart</h3>
+  <p class="section-desc">
+    We combine business consulting, strategy, and technology to support
+    sustainable growth for modern businesses.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h4>Business Development</h4>
+      <p>Helping businesses expand reach and unlock new opportunities.</p>
+    </div>
+    <div class="card">
+      <h4>Consulting & Strategy</h4>
+      <p>Practical advice and market insights to improve performance.</p>
+    </div>
+    <div class="card">
+      <h4>Digital Enablement</h4>
+      <p>Digital platforms that simplify operations and engagement.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services">
+  <h3>Our Services</h3>
+  <p class="section-desc">
+    End-to-end business development and consulting services focused on results.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h4>Business Consulting</h4>
+      <p>Market analysis, planning, and operational improvement.</p>
+    </div>
+    <div class="card">
+      <h4>Customer Growth Strategy</h4>
+      <p>Attract, retain, and engage customers effectively.</p>
+    </div>
+    <div class="card">
+      <h4>Promotion & Visibility</h4>
+      <p>Cost-effective digital promotion strategies.</p>
+    </div>
+    <div class="card">
+      <h4>Coaching & Advisory</h4>
+      <p>Guidance to support better decisions and growth.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Product -->
+<section id="product">
+  <h3>Our Product</h3>
+  <p class="section-desc">
+    Bemart Marketplace Platform connects customers and businesses in real time
+    through secure and easy-to-use applications.
+  </p>
+
+  <div class="product-grid">
+
+    <!-- Customer App -->
+    <div class="product-card">
+      <span class="product-tag">Customer App</span>
+      <h4>Discover Products & Services</h4>
+      <p>Find nearby businesses, browse services, and view offers instantly.</p>
+
+      <div class="screenshots">
+        <img src="customer-1.png" alt="Customer App Screenshot 1">
+        <img src="customer-2.png" alt="Customer App Screenshot 2">
+        <img src="customer-3.png" alt="Customer App Screenshot 3">
+      </div>
+
+      <ul>
+        <li>Search by category or location</li>
+        <li>Verified business profiles</li>
+        <li>Real-time offers</li>
+      </ul>
+
+      <div class="store-badges">
+        <img src="appstore-badge.png" alt="Download on App Store">
+        <img src="googleplay-badge.png" alt="Get it on Google Play">
+      </div>
+
+      <a href="/customer" class="btn btn-primary">Open Web</a>
+    </div>
+
+    <!-- Supplier App -->
+    <div class="product-card">
+      <span class="product-tag">Supplier App</span>
+      <h4>Grow Your Business</h4>
+      <p>Manage your profile, publish offers, and reach customers instantly.</p>
+
+      <div class="screenshots">
+        <img src="supplier-1.png" alt="Supplier App Screenshot 1">
+        <img src="supplier-2.png" alt="Supplier App Screenshot 2">
+        <img src="supplier-3.png" alt="Supplier App Screenshot 3">
+      </div>
+
+      <ul>
+        <li>Business profile management</li>
+        <li>Promotions and offers</li>
+        <li>Lower advertising cost</li>
+      </ul>
+
+      <div class="store-badges">
+        <img src="appstore-badge.png" alt="Download on App Store">
+        <img src="googleplay-badge.png" alt="Get it on Google Play">
+      </div>
+
+      <a href="/business" class="btn btn-primary">Open Web</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta" id="contact">
+  <h3>Book a Consultation</h3>
+  <p>Let’s discuss how we can support your business growth.</p>
+  <a href="mailto:support@bemart.nz" class="btn btn-outline">Book a Consultation</a>
+</div>
+
+<footer>
+  <p>© 2026 Bemart NZ Limited. All rights reserved.</p>
+  <p>Email: support@bemart.nz | Phone: +64 21 033 9827</p>
+</footer>
+
+</body>
+</html>
