@@ -5,24 +5,17 @@ on:
     branches:
       - main
 
-permissions:
-  contents: read
-  id-token: write   # REQUIRED for OIDC
-
 jobs:
   build_and_deploy:
-    name: Build and Deploy
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Deploy to Azure Static Web Apps
         uses: Azure/static-web-apps-deploy@v1
         with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_THANKFUL_CLIFF_03FEA1D00 }}
           action: upload
-          app_location: "/"        # index.html in repo root
-          api_location: ""         # no backend
-          output_location: ""      # no build
-          use_oidc: true           #  
+          app_location: "/"
+          api_location: ""
+          output_location: ""
